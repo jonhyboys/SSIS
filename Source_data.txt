@@ -1,0 +1,11 @@
+IdEmpresa,NombreEmpresa,IdEmpleado,NombreEmpleado
+Nica1,Flor de caña,1,Jonhy Olivas
+Nica1,Flor de caña,2,Luis Padilla
+Nica1,Flor de caña,3,Ana Alfonzo
+Espa2,Ibercaja,1,Juan Cuesta
+Espa2,Ibercaja,2,Mauri Moro
+Espa2,Ibercaja,3,Bea Molinares
+Espa2,Ibercaja,4,Sara Nunes
+Espa2,Ibercaja,5,Carlos Perez
+Espa2,Ibercaja,6,Dan Cortez
+Espa2,Ibercaja,7,Jose Sanz

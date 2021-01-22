@@ -1,0 +1,2221 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/22/2021 9:54:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-4P0UA6H"
+  DTS:CreatorName="DESKTOP-4P0UA6H\JonhyBoys"
+  DTS:DTSID="{04C6633D-04FD-41CA-BB40-3E67207524DB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{D468473F-D8EA-493E-BCE3-4CD89D8AD0CA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Datos_TXT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{96343CDE-3FB2-4034-82E8-47D60CD15815}"
+      DTS:ObjectName="Datos_TXT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\JonhyBoys\source\repos\SSIS\Head_Detail\Source_data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpresa"
+              DTS:DTSID="{9E52E0BB-3D76-41D3-A4FB-CDECCF4ACEC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreEmpresa"
+              DTS:DTSID="{DFF0D757-0451-461B-B187-4FE2BEEA6B8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpleado"
+              DTS:DTSID="{12675308-D2EF-4F43-894D-6A3A8664C6B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreEmpleado"
+              DTS:DTSID="{074EF64B-C62B-4DF5-81D1-DE8DB2595F3B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-4P0UA6H\SQLEXPRESS.SSIS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4F6B231E-9EC8-4E03-B677-0E4AC9EBA0E2}"
+      DTS:ObjectName="DESKTOP-4P0UA6H\SQLEXPRESS.SSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-4P0UA6H\SQLEXPRESS;Initial Catalog=SSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Detail_TXT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5E32B607-6664-40DC-AB7D-AC48B4108239}"
+      DTS:ObjectName="Detail_TXT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Detail_Data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpresa"
+              DTS:DTSID="{A4338541-D52C-4C73-B131-BCEB22B3A8FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpleado"
+              DTS:DTSID="{21CABB88-8790-4A16-B166-EDB9FEF4D9F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreEmpleado"
+              DTS:DTSID="{EB53BE1D-BCDE-42A0-BFE3-9EE43B5D55BD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Head_TXT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9D4D2765-B505-47D1-BCE6-0F89DA96D91C}"
+      DTS:ObjectName="Head_TXT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Head_Data.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpresa"
+              DTS:DTSID="{1FFCCA7B-5B05-449B-B372-D43844A28458}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreEmpresa"
+              DTS:DTSID="{4A926C8C-9F72-4540-B3F9-3D741B3A3054}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Resutado_Encabezado]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D4752AE9-FAE8-473C-91D5-95D5CA53346E}"
+      DTS:ObjectName="Resutado_Encabezado">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="RaggedRight"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Resultado.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpresa"
+              DTS:DTSID="{D172457F-7C2D-4832-A702-64D44D4C906F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreEmpresa"
+              DTS:DTSID="{CC99918A-CEC4-46A7-B48B-C7B98B07BF44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna de delimitador de filas"
+              DTS:DTSID="{87806A4D-3F6C-45A7-8C86-B99596605BFC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Resutado_TXT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8DE73C32-3721-4BF1-9F68-FB09AB5D9BD9}"
+      DTS:ObjectName="Resutado_TXT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="RaggedRight"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Resultado.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpleado"
+              DTS:DTSID="{C9CD09DF-4E07-4DC4-8DA5-818D08D85E1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:ObjectName="NombreEmpleado"
+              DTS:DTSID="{291DA7A1-64CB-4379-9CAA-E39ED59DFF32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delimiter"
+              DTS:DTSID="{3DC03C54-4F49-4AEF-B8CA-3D307A55E9B3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC8618C3-0BFB-4BEF-B511-674C2BD3CACD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Empresa_Actual">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5DB1DDAE-B581-45DA-A037-86DE2A32B86A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Id_Empresa">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Partir Datos de Origen"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{39BA362F-9FB2-4757-B0B4-C2AF7AF434DC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Partir Datos de Origen"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Partir Datos de Origen\Destino de conjunto de registros"
+              componentClassID="Microsoft.RecordsetDestination"
+              contactInfo="Destino de conjunto de registros;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea y rellena un conjunto de registros ADO en memoria que está disponible fuera del flujo de datos. Los scripts y otros elementos de paquete pueden usar el conjunto de registros. Por ejemplo, se usa un conjunto de registros para almacenar el nombre de los archivos que se van a cargar en el almacenamiento de datos."
+              name="Destino de conjunto de registros">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el conjunto de registros."
+                  name="VariableName">User::Id_Empresa</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Partir Datos de Origen\Destino de conjunto de registros.Inputs[Entrada de destino de conjunto de registros]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de conjunto de registros">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Destino de conjunto de registros.Inputs[Entrada de destino de conjunto de registros].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpresa]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Partir Datos de Origen\Detail"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Detail"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Partir Datos de Origen\Detail.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
+                  connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].Columns[IdEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpleado"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]" />
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpleado"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      dataType="wstr"
+                      length="50"
+                      name="IdEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                      dataType="wstr"
+                      length="50"
+                      name="IdEmpleado" />
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                      dataType="wstr"
+                      length="50"
+                      name="NombreEmpleado" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Partir Datos de Origen\Head"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Head"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Partir Datos de Origen\Head.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Head_TXT]"
+                  connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpresa]" />
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpresa"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpresa]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      dataType="wstr"
+                      length="50"
+                      name="IdEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                      dataType="wstr"
+                      length="50"
+                      name="NombreEmpresa" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Partir Datos de Origen\Multidifusión"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión">
+              <inputs>
+                <input
+                  refId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 2"
+                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 4]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 4"
+                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 3"
+                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Partir Datos de Origen\Ordenar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[NombreEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpresa"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[IdEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpleado"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[NombreEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpleado"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      name="IdEmpresa"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      name="NombreEmpresa">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      name="IdEmpleado">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      name="NombreEmpleado">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Partir Datos de Origen\Ordenar 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[NombreEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpresa"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[IdEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpleado"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[NombreEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpleado"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      name="IdEmpresa"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      name="NombreEmpresa"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      name="IdEmpleado">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      name="NombreEmpleado">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Partir Datos de Origen\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Partir Datos de Origen\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Datos_TXT]"
+                  connectionManagerRefId="Package.ConnectionManagers[Datos_TXT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                      name="IdEmpresa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                      name="NombreEmpresa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                      name="IdEmpleado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                      length="50"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                      name="NombreEmpleado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IdEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IdEmpleado" />
+                    <externalMetadataColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreEmpleado" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Partir Datos de Origen.Paths[Memoria]"
+              endId="Package\Partir Datos de Origen\Destino de conjunto de registros.Inputs[Entrada de destino de conjunto de registros]"
+              name="Memoria"
+              startId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Partir Datos de Origen.Paths[Salida de multidifusión 2]"
+              endId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de multidifusión 2"
+              startId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 2]" />
+            <path
+              refId="Package\Partir Datos de Origen.Paths[Salida de multidifusión 4]"
+              endId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación]"
+              name="Salida de multidifusión 4"
+              startId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 4]" />
+            <path
+              refId="Package\Partir Datos de Origen.Paths[Salida de ordenación]"
+              endId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de ordenación"
+              startId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Partir Datos de Origen.Paths[Salida de origen de archivo plano]"
+              endId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de origen de archivo plano"
+              startId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+            <path
+              refId="Package\Partir Datos de Origen.Paths[Variable]"
+              endId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación]"
+              name="Variable"
+              startId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Recorrer los encabezados"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Contenedor de bucles Foreach"
+      DTS:DTSID="{3D3403A6-98FE-42F3-9790-47495107888B}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Recorrer los encabezados">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{5C460C46-61D1-4EC0-A5D4-25D381BCE166}"
+        DTS:ObjectName="{5C460C46-61D1-4EC0-A5D4-25D381BCE166}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::Id_Empresa" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Recorrer los encabezados\Pegar Detalle"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{369765D4-67E4-43A6-B0BC-8273DD63189D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Pegar Detalle"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Destino de archivo plano"
+                  localeId="3082"
+                  name="Destino de archivo plano"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                      name="Overwrite">false</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Resutado_TXT]"
+                      connectionManagerRefId="Package.ConnectionManagers[Resutado_TXT]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                      hasSideEffects="true"
+                      name="Entrada de destino de archivo plano">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[IdEmpleado]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="IdEmpleado"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]" />
+                        <inputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpleado]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="NombreEmpleado"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                          dataType="wstr"
+                          length="50"
+                          name="IdEmpleado" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                          dataType="wstr"
+                          length="50"
+                          name="NombreEmpleado" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Delimiter]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Delimiter" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origen de archivo plano"
+                  localeId="3082"
+                  name="Detalle"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si las columnas de longitud cero se tratan como NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
+                      connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano]"
+                      name="Salida de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          length="50"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          name="IdEmpresa"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                          length="50"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                          name="IdEmpleado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                          length="50"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                          name="NombreEmpleado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          dataType="wstr"
+                          length="50"
+                          name="IdEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                          dataType="wstr"
+                          length="50"
+                          name="IdEmpleado" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                          dataType="wstr"
+                          length="50"
+                          name="NombreEmpleado" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Columna de salida de error de origen de archivo plano"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          name="Columna de salida de error de origen de archivo plano" />
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+                  name="División condicional"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]"
+                      description="Entrada en la transformación División condicional"
+                      name="Entrada de división condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional].Columns[IdEmpresa]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="IdEmpresa"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Detalle]"
+                      description="Salida 1 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Detalle"
+                      synchronousInputId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">#{Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">IdEmpresa == @[User::Empresa_Actual]</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida predeterminada de división condicional]"
+                      description="Salida predeterminada de la transformación División condicional"
+                      exclusionGroup="1"
+                      name="Salida predeterminada de división condicional"
+                      synchronousInputId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional]"
+                      description="Salida de error de la transformación División condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de división condicional"
+                      synchronousInputId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Recorrer los encabezados\Pegar Detalle.Paths[Detalle]"
+                  endId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  name="Detalle"
+                  startId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Detalle]" />
+                <path
+                  refId="Package\Recorrer los encabezados\Pegar Detalle.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]"
+                  name="Salida de origen de archivo plano"
+                  startId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recorrer los encabezados\Pegar Encabezado"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{E7440FF4-4309-441D-B0BE-7BECDCA86760}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Pegar Encabezado"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Destino de archivo plano"
+                  localeId="3082"
+                  name="Destino de archivo plano"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                      name="Overwrite">false</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Resutado_Encabezado]"
+                      connectionManagerRefId="Package.ConnectionManagers[Resutado_Encabezado]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                      hasSideEffects="true"
+                      name="Entrada de destino de archivo plano">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="IdEmpresa"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                        <inputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpresa]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="NombreEmpresa"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                          dataType="wstr"
+                          length="50"
+                          name="IdEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                          dataType="wstr"
+                          length="50"
+                          name="NombreEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Columna de delimitador de filas]"
+                          dataType="wstr"
+                          length="255"
+                          name="Columna de delimitador de filas" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+                  name="División condicional"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]"
+                      description="Entrada en la transformación División condicional"
+                      name="Entrada de división condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional].Columns[IdEmpresa]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="IdEmpresa"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Encabezado]"
+                      description="Salida 1 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Encabezado"
+                      synchronousInputId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">#{Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">IdEmpresa == @[User::Empresa_Actual]</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida predeterminada de división condicional]"
+                      description="Salida predeterminada de la transformación División condicional"
+                      exclusionGroup="1"
+                      name="Salida predeterminada de división condicional"
+                      synchronousInputId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional]"
+                      description="Salida de error de la transformación División condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de división condicional"
+                      synchronousInputId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origen de archivo plano"
+                  localeId="3082"
+                  name="Origen de archivo plano"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si las columnas de longitud cero se tratan como NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Head_TXT]"
+                      connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                      name="Salida de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          length="50"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          name="IdEmpresa"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                          length="50"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                          name="NombreEmpresa"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si los datos están en formato binario."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          dataType="wstr"
+                          length="50"
+                          name="IdEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                          dataType="wstr"
+                          length="50"
+                          name="NombreEmpresa" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de archivo plano">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Columna de salida de error de origen de archivo plano"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          name="Columna de salida de error de origen de archivo plano" />
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Encabezado]"
+                  endId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  name="Encabezado"
+                  startId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Encabezado]" />
+                <path
+                  refId="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]"
+                  name="Salida de origen de archivo plano"
+                  startId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recorrer los encabezados.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{F6686172-431C-450F-9BC9-EB365871E5D4}"
+          DTS:From="Package\Recorrer los encabezados\Pegar Encabezado"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Recorrer los encabezados\Pegar Detalle" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{652A8BEB-3783-440B-A387-A1D53B72FB9A}"
+          DTS:ObjectName="{652A8BEB-3783-440B-A387-A1D53B72FB9A}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Empresa_Actual" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{53C9F5B0-0DC4-4D8C-B09A-380D8C1E1C7D}"
+      DTS:From="Package\Partir Datos de Origen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Recorrer los encabezados" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Partir Datos de Origen"
+          TopLeft="674.166639877691,72.8000005785624" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Detalle"
+          TopLeft="71.2333038952625,115.466669834985" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Encabezado"
+          TopLeft="57.0666377915287,21.0000024175646" />
+        <EdgeLayout
+          Id="Package\Recorrer los encabezados.PrecedenceConstraints[Restricción]"
+          TopLeft="141.149970843396,62.6000024175646">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.8666674174204"
+              Start="0,0"
+              End="0,45.3666674174204">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.3666674174204" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="309.6,236"
+          Size="309.6,279.2"
+          Id="Package\Recorrer los encabezados"
+          TopLeft="606.666642559901,221.00000175635" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="763.216641218796,114.400000578562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,106.600001177788"
+              Start="0,0"
+              End="0,99.1000011777879">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,99.1000011777879" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Partir Datos de Origen">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Partir Datos de Origen\Multidifusión"
+          TopLeft="488.333313928711,119.600000950495" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Partir Datos de Origen\Ordenar 1"
+          TopLeft="494.999980330468,259.13333539274" />
+        <NodeLayout
+          Size="104.8,41.6"
+          Id="Package\Partir Datos de Origen\Detail"
+          TopLeft="686.666639380986,208.000001653036" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Partir Datos de Origen\Destino de conjunto de registros"
+          TopLeft="126.666661633386,410.800003264745" />
+        <NodeLayout
+          Size="103.2,41.6"
+          Id="Package\Partir Datos de Origen\Head"
+          TopLeft="511.666646334861,398.666669834985" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Partir Datos de Origen\Ordenar"
+          TopLeft="235.833323962159,235.733335206774" />
+        <EdgeLayout
+          Id="Package\Partir Datos de Origen.Paths[Variable]"
+          TopLeft="524.533313928711,161.200000950495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-230.299989966552,74.5333342562782"
+              Start="0,0"
+              End="-230.299989966552,67.0333342562782">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7945191211976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.7945191211976"
+                    Point2="0,25.7945191211976"
+                    Point3="-4,25.7945191211976" />
+                  <mssgle:LineSegment
+                    End="-226.299989966552,25.7945191211976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-226.299989966552,25.7945191211976"
+                    Point2="-230.299989966552,25.7945191211976"
+                    Point3="-230.299989966552,29.7945191211976" />
+                  <mssgle:LineSegment
+                    End="-230.299989966552,67.0333342562782" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.759526233276,30.7945191211976,37.2190625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Partir Datos de Origen.Paths[Salida de ordenación]"
+          TopLeft="560.333313332665,300.73333539274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.9333344422446"
+              Start="0,0"
+              End="0,90.4333344422446">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.4333344422446" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Partir Datos de Origen.Paths[Salida de multidifusión 4]"
+          TopLeft="557.06664712959,161.200000950495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.9333344422447"
+              Start="0,0"
+              End="0,90.4333344422447">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,90.4333344422447" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Partir Datos de Origen.Paths[Salida de multidifusión 2]"
+          TopLeft="588.933313928711,161.200000950495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150.133325452275,46.8000007025402"
+              Start="0,0"
+              End="150.133325452275,39.3000007025402">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.1965585605349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1965585605349"
+                    Point2="0,16.1965585605349"
+                    Point3="4,16.1965585605349" />
+                  <mssgle:LineSegment
+                    End="146.133325452275,16.1965585605349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.133325452275,16.1965585605349"
+                    Point2="150.133325452275,16.1965585605349"
+                    Point3="150.133325452275,20.1965585605349" />
+                  <mssgle:LineSegment
+                    End="150.133325452275,39.3000007025402" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Partir Datos de Origen.Paths[Memoria]"
+          TopLeft="294.233323962159,277.333335206774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-53.9666623287734,133.466668057972"
+              Start="0,0"
+              End="-53.9666623287734,125.966668057972">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.7333340289858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.7333340289858"
+                    Point2="0,66.7333340289858"
+                    Point3="-4,66.7333340289858" />
+                  <mssgle:LineSegment
+                    End="-49.9666623287734,66.7333340289858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49.9666623287734,66.7333340289858"
+                    Point2="-53.9666623287734,66.7333340289858"
+                    Point3="-53.9666623287734,70.7333340289858" />
+                  <mssgle:LineSegment
+                    End="-53.9666623287734,125.966668057972" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Partir Datos de Origen\Origen de archivo plano"
+          TopLeft="469.166648023659,19.0666668181949" />
+        <EdgeLayout
+          Id="Package\Partir Datos de Origen.Paths[Salida de origen de archivo plano]"
+          TopLeft="560.149980976185,60.6666668181949">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.9333341323001"
+              Start="0,0"
+              End="0,51.4333341323001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.4333341323001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelinePath
+    design-time-name="Package\Partir Datos de Origen.Paths[Variable]">
+    <PathAnnotation>PathName</PathAnnotation>
+  </PipelinePath>
+  <TaskHost
+    design-time-name="Package\Recorrer los encabezados\Pegar Detalle">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="111.2,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Detalle\Detalle"
+          TopLeft="485,81" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Detalle\División condicional"
+          TopLeft="464,208" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano"
+          TopLeft="455,345" />
+        <EdgeLayout
+          Id="Package\Recorrer los encabezados\Pegar Detalle.Paths[Salida de origen de archivo plano]"
+          TopLeft="540.6,122.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.19999999999993,85.4000000000001"
+              Start="0,0"
+              End="8.19999999999993,77.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.7"
+                    Point2="0,42.7"
+                    Point3="4,42.7" />
+                  <mssgle:LineSegment
+                    End="4.19999999999993,42.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.19999999999993,42.7"
+                    Point2="8.19999999999993,42.7"
+                    Point3="8.19999999999993,46.7" />
+                  <mssgle:LineSegment
+                    End="8.19999999999993,77.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recorrer los encabezados\Pegar Detalle.Paths[Detalle]"
+          TopLeft="550.1,249.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,95.4"
+              Start="0,0"
+              End="0,87.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.73634765625,39.07548828125,31.4726953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Recorrer los encabezados\Pegar Encabezado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Encabezado\División condicional"
+          TopLeft="582,197" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano"
+          TopLeft="570,75" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano"
+          TopLeft="573,351" />
+        <EdgeLayout
+          Id="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Salida de origen de archivo plano]"
+          TopLeft="665.6,116.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.4"
+              Start="0,0"
+              End="0,72.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Encabezado]"
+          TopLeft="668.1,238.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,112.4"
+              Start="0,0"
+              End="0,104.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,104.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.73703125,47.57548828125,53.4740625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
