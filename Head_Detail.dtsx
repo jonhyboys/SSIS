@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Head_Detail"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{B50BEC7B-DDF3-47F6-897E-813CDD633E03}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{3AC762B1-CEC4-4012-A947-CE2AF26AE10F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\JonhyBoys\source\repos\SSIS\Head_Detail\Source_data.txt">
+          DTS:ConnectionString="D:\Proyectos\SSIS\Source_Data.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{9E52E0BB-3D76-41D3-A4FB-CDECCF4ACEC0}"
+              DTS:DTSID="{7DCDF355-2851-4399-9B59-82ECFFB2C699}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpresa"
-              DTS:DTSID="{DFF0D757-0451-461B-B187-4FE2BEEA6B8D}"
+              DTS:DTSID="{59B72D13-DEE0-4FDB-AF06-AD7CA227FCDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpleado"
-              DTS:DTSID="{12675308-D2EF-4F43-894D-6A3A8664C6B4}"
+              DTS:DTSID="{E06FEA65-E072-4028-8A1D-80766FADD5CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpleado"
-              DTS:DTSID="{074EF64B-C62B-4DF5-81D1-DE8DB2595F3B}"
+              DTS:DTSID="{72358A94-889D-4414-9D8A-208F3F641ED5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -83,10 +83,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Detail_TXT]"
+      DTS:refId="Package.ConnectionManagers[Detalles_Temp]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{5E32B607-6664-40DC-AB7D-AC48B4108239}"
-      DTS:ObjectName="Detail_TXT">
+      DTS:ObjectName="Detalles_Temp">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -95,7 +95,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Detail_Data.txt">
+          DTS:ConnectionString="D:\Proyectos\Detail_Data.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{A4338541-D52C-4C73-B131-BCEB22B3A8FE}"
+              DTS:DTSID="{C030A64B-2F03-48C0-A069-2613F67D7AC6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpleado"
-              DTS:DTSID="{21CABB88-8790-4A16-B166-EDB9FEF4D9F5}"
+              DTS:DTSID="{CEFDDBD8-A132-419E-8484-1F24DDE90312}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,17 +122,17 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpleado"
-              DTS:DTSID="{EB53BE1D-BCDE-42A0-BFE3-9EE43B5D55BD}"
+              DTS:DTSID="{47D7DA37-A575-42CE-A8AA-B18DFA35053F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Head_TXT]"
+      DTS:refId="Package.ConnectionManagers[Encabezados_Temp]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{9D4D2765-B505-47D1-BCE6-0F89DA96D91C}"
-      DTS:ObjectName="Head_TXT">
+      DTS:ObjectName="Encabezados_Temp">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -141,7 +141,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Head_Data.txt">
+          DTS:ConnectionString="D:\Proyectos\Head_Data.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -150,7 +150,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{1FFCCA7B-5B05-449B-B372-D43844A28458}"
+              DTS:DTSID="{01822015-9F4F-4572-93E1-5240DD60AAED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,62 +159,17 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpresa"
-              DTS:DTSID="{4A926C8C-9F72-4540-B3F9-3D741B3A3054}"
+              DTS:DTSID="{43566BC0-CE94-4AD6-B79A-7064E24FB535}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Resutado_Encabezado]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{D4752AE9-FAE8-473C-91D5-95D5CA53346E}"
-      DTS:ObjectName="Resutado_Encabezado">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="RaggedRight"
-          DTS:LocaleID="3082"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Resultado.txt">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="50"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{D172457F-7C2D-4832-A702-64D44D4C906F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnDelimiter=""
-              DTS:ColumnWidth="50"
-              DTS:MaximumWidth="50"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="NombreEmpresa"
-              DTS:DTSID="{CC99918A-CEC4-46A7-B48B-C7B98B07BF44}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Columna de delimitador de filas"
-              DTS:DTSID="{87806A4D-3F6C-45A7-8C86-B99596605BFC}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Resutado_TXT]"
+      DTS:refId="Package.ConnectionManagers[Resultado_Detalles]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{8DE73C32-3721-4BF1-9F68-FB09AB5D9BD9}"
-      DTS:ObjectName="Resutado_TXT">
+      DTS:ObjectName="Resultado_Detalles">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="RaggedRight"
@@ -223,7 +178,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Proyectos\SSIS\Head_Detail\Resultado.txt">
+          DTS:ConnectionString="D:\Proyectos\Resultado.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnDelimiter=""
@@ -232,7 +187,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpleado"
-              DTS:DTSID="{C9CD09DF-4E07-4DC4-8DA5-818D08D85E1D}"
+              DTS:DTSID="{2197C074-97AE-460D-B53F-19A3AF5321A4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnDelimiter=""
@@ -240,7 +195,7 @@
               DTS:MaximumWidth="50"
               DTS:DataType="130"
               DTS:ObjectName="NombreEmpleado"
-              DTS:DTSID="{291DA7A1-64CB-4379-9CAA-E39ED59DFF32}"
+              DTS:DTSID="{0B790DB4-83A9-4630-B4D2-4EF732B9F46C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,7 +203,52 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Delimiter"
-              DTS:DTSID="{3DC03C54-4F49-4AEF-B8CA-3D307A55E9B3}"
+              DTS:DTSID="{02FD9D94-C122-47F0-B20D-A1BC64AE95B3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Resultado_Encabezado]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D4752AE9-FAE8-473C-91D5-95D5CA53346E}"
+      DTS:ObjectName="Resultado_Encabezado">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="RaggedRight"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Proyectos\Resultado.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdEmpresa"
+              DTS:DTSID="{9C382201-8329-400F-9660-ADAA70931256}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="50"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreEmpresa"
+              DTS:DTSID="{9D3EF8CA-5E8E-4C0E-8D31-7AC896F389ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Columna de delimitador de filas"
+              DTS:DTSID="{27CDC2A7-2A01-45DD-83E8-ABD18098F4FF}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -745,8 +745,8 @@
               <connections>
                 <connection
                   refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
-                  connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
+                  connectionManagerID="Package.ConnectionManagers[Detalles_Temp]"
+                  connectionManagerRefId="Package.ConnectionManagers[Detalles_Temp]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
@@ -827,8 +827,8 @@
               <connections>
                 <connection
                   refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Head_TXT]"
-                  connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
+                  connectionManagerID="Package.ConnectionManagers[Encabezados_Temp]"
+                  connectionManagerRefId="Package.ConnectionManagers[Encabezados_Temp]"
                   name="FlatFileConnection" />
               </connections>
               <inputs>
@@ -1086,6 +1086,42 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Eliminar archivo de Detalles temporal"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Tarea Sistema de archivos"
+      DTS:DTSID="{bb328d73-4de6-429b-91d0-a2a8a5e62b19}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Eliminar archivo de Detalles temporal"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{5E32B607-6664-40DC-AB7D-AC48B4108239}"
+          TaskDestinationPath="{9D4D2765-B505-47D1-BCE6-0F89DA96D91C}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Eliminar archivo de Encabezados temporal"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Tarea Sistema de archivos"
+      DTS:DTSID="{D6A078AE-FDB9-46DF-82B0-7D67B75558D8}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Eliminar archivo de Encabezados temporal"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{9D4D2765-B505-47D1-BCE6-0F89DA96D91C}"
+          TaskDestinationPath="{9D4D2765-B505-47D1-BCE6-0F89DA96D91C}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Recorrer claves de encabezado y crear archivo Resultado"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contenedor de bucles Foreach"
@@ -1145,8 +1181,8 @@
                   <connections>
                     <connection
                       refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Resutado_TXT]"
-                      connectionManagerRefId="Package.ConnectionManagers[Resutado_TXT]"
+                      connectionManagerID="Package.ConnectionManagers[Resultado_Detalles]"
+                      connectionManagerRefId="Package.ConnectionManagers[Resultado_Detalles]"
                       name="FlatFileConnection" />
                   </connections>
                   <inputs>
@@ -1304,8 +1340,8 @@
                   <connections>
                     <connection
                       refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
-                      connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
+                      connectionManagerID="Package.ConnectionManagers[Detalles_Temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[Detalles_Temp]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1481,8 +1517,8 @@
                   <connections>
                     <connection
                       refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Resutado_Encabezado]"
-                      connectionManagerRefId="Package.ConnectionManagers[Resutado_Encabezado]"
+                      connectionManagerID="Package.ConnectionManagers[Resultado_Encabezado]"
+                      connectionManagerRefId="Package.ConnectionManagers[Resultado_Encabezado]"
                       name="FlatFileConnection" />
                   </connections>
                   <inputs>
@@ -1639,8 +1675,8 @@
                   <connections>
                     <connection
                       refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Head_TXT]"
-                      connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
+                      connectionManagerID="Package.ConnectionManagers[Encabezados_Temp]"
+                      connectionManagerRefId="Package.ConnectionManagers[Encabezados_Temp]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1780,6 +1816,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
       DTS:To="Package\Recorrer claves de encabezado y crear archivo Resultado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{20D0063C-A653-44FB-864F-99B6D69D33A5}"
+      DTS:From="Package\Recorrer claves de encabezado y crear archivo Resultado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Eliminar archivo de Encabezados temporal" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{5035B5AD-DB69-4680-992E-614B52600CC1}"
+      DTS:From="Package\Eliminar archivo de Encabezados temporal"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Eliminar archivo de Detalles temporal" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1792,7 +1844,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="253.6,41.6"
           Id="Package\Dividir datos en Encabezado y Detalle"
@@ -1848,6 +1900,58 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,37.5666673554313" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="276,41.6"
+          Id="Package\Eliminar archivo de Encabezados temporal"
+          TopLeft="498.333313531347,211.466668347253" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="421.266664613619,235.966668026977">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.0666489177278,0"
+              Start="0,0"
+              End="69.5666489177278,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.5666489177278,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="250.4,41.6"
+          Id="Package\Eliminar archivo de Detalles temporal"
+          TopLeft="507.499979833764,297.533333491749" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="634.516646682555,253.066668347253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.4666651444961"
+              Start="0,0"
+              End="0,36.9666651444961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.9666651444961" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

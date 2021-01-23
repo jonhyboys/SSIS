@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-4P0UA6H</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIFGN0yTJ6kmGV2BzPXZiCQAAAAACAAAAAAAQZgAAAAEAACAAAACDC/T4qUHTDbwhU//KFyz63RQ4vwiyk0W3zst9dHMkUQAAAAAOgAAAAAIAACAAAAC2ueL31W0TRsZTATmiieJ5Qq+sVUdI/dY7vnjEZr3WhZAAAADnqEXESSi27kDQ8L/sqJ2bQlhLAyfFtM2NSMMtEyjck1DVZzOJxDInZnw3eiqEL868A9RCVuHbXRq1yEirxtE+rWM1iUcc6BKKKcY+rH9z+nBmZY49e3yUs2qcVGuAXVApAwBpLWUlfFe+/+pnKIq9VrrRG18NlpllgvFapiE/TxKFc13aRtlPPvpTPu22WJhAAAAA3hMXWdZeNvR4ZRkk3XecVXTXGp/Y/xnJhToBg3DzSrTS1cn/uhgcgQu8C3w2ilbyQRxiYUV4NBxnWUtt+VCuaQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIFGN0yTJ6kmGV2BzPXZiCQAAAAACAAAAAAAQZgAAAAEAACAAAAD1HkAMNxPdW9zq0Z5H8b8XI/fwoOxn9pOUHbHWMRMBSQAAAAAOgAAAAAIAACAAAAC4MZuu2A80zd8DvMdq9pZHIw/FFAFTvQcDuSugSEBEQpAAAABg8y5HJUZ9TktId5sQ2HijBfOGoxhPXKMPT+7GTZPuIv6dDutxJc3McKxHJQeFJRnBJjotComtfXJCLTYTsyj0yujqP1cF9fBetq+uihNwBFEycxQmzsKsu04u66oau09CyTKy/fUMYDbLli3836CCaMRTr+OTtbzquhxyD+v0v9LKrpE9Jm0vwa0l1GZ9iXhAAAAAuwIQSY/lePhkB+WW2t1ZGOQTMlAGICsiGssBYPcrXgCA7BCQ+FrEddXhL3cqTzkVB4N877XGyCaab3yHG3p56g==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Head_Detail</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">41</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B38E2C88-CD9B-493D-8A01-DE03BF0FAF66}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E07D1EDD-50F7-45E3-965A-EF964861F39F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -123,7 +123,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\JonhyBoys\source\repos\SSIS\Head_Detail\Source_data.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\SSIS\Source_Data.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -438,7 +438,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\SSIS\Head_Detail\Detail_Data.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\Detail_Data.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -635,7 +635,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\SSIS\Head_Detail\Head_Data.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\Head_Data.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -761,7 +761,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -776,7 +776,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -791,7 +791,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -806,7 +806,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -821,7 +821,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -832,11 +832,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\SSIS\Head_Detail\Resultado.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\Resultado.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -851,7 +851,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.Format">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -866,7 +866,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -882,7 +882,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -897,7 +897,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -912,7 +912,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -928,7 +928,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -943,7 +943,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_Encabezado.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_Encabezado.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -958,7 +958,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -973,7 +973,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -988,7 +988,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1003,7 +1003,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1018,7 +1018,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1029,11 +1029,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\SSIS\Head_Detail\Resultado.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\Proyectos\Resultado.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1048,7 +1048,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.Format">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1063,7 +1063,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1079,7 +1079,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1094,7 +1094,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1109,7 +1109,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1125,7 +1125,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1140,7 +1140,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Resutado_TXT.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.Resultado_TXT.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
