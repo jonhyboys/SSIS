@@ -6,13 +6,14 @@
   DTS:CreatorComputerName="DESKTOP-4P0UA6H"
   DTS:CreatorName="DESKTOP-4P0UA6H\JonhyBoys"
   DTS:DTSID="{0E7423AB-31B4-4028-8FA3-59FE0107B193}"
+  DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="3082"
   DTS:ObjectName="Head_Detail"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{3AC762B1-CEC4-4012-A947-CE2AF26AE10F}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{DCB72011-BCA2-4C61-B80A-D148980A5960}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +22,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{96343CDE-3FB2-4034-82E8-47D60CD15815}"
       DTS:ObjectName="Datos_TXT">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::URL_Datos]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -104,7 +107,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{C030A64B-2F03-48C0-A069-2613F67D7AC6}"
+              DTS:DTSID="{1AEC55D6-16ED-417D-B267-6F0D4FE21B7B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +116,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpleado"
-              DTS:DTSID="{CEFDDBD8-A132-419E-8484-1F24DDE90312}"
+              DTS:DTSID="{1E21BC22-B524-4661-88E5-791859359C66}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +125,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpleado"
-              DTS:DTSID="{47D7DA37-A575-42CE-A8AA-B18DFA35053F}"
+              DTS:DTSID="{D963DED9-7BFC-4789-9803-BB6E530FF5FA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -150,7 +153,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{01822015-9F4F-4572-93E1-5240DD60AAED}"
+              DTS:DTSID="{C1FE36D6-2C95-481B-B482-3F724DDACB54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +162,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpresa"
-              DTS:DTSID="{43566BC0-CE94-4AD6-B79A-7064E24FB535}"
+              DTS:DTSID="{63C33FF3-2E17-49FE-AF23-CE56D6798794}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -231,7 +234,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="IdEmpresa"
-              DTS:DTSID="{9C382201-8329-400F-9660-ADAA70931256}"
+              DTS:DTSID="{ABA729EB-3D9C-4A9B-ADEC-D8E8AFDD4B63}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnDelimiter=""
@@ -240,7 +243,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="NombreEmpresa"
-              DTS:DTSID="{9D3EF8CA-5E8E-4C0E-8D31-7AC896F389ED}"
+              DTS:DTSID="{3A582E5E-027D-4BDC-9ADF-458FA491D764}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,20 +251,28 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Columna de delimitador de filas"
-              DTS:DTSID="{27CDC2A7-2A01-45DD-83E8-ABD18098F4FF}"
+              DTS:DTSID="{F4FBA9DE-45C1-4762-8804-7148E6EAB499}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="D:\Proyectos\SSIS\Head_Detail_Config.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{B1825183-78F0-4BDA-AA34-9A1432CA5B44}"
+      DTS:ObjectName="Desarrollo" />
+  </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{CC8618C3-0BFB-4BEF-B511-674C2BD3CACD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="Empresa_Actual">
+      DTS:ObjectName="Id_Empresa">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
@@ -271,7 +282,7 @@
       DTS:DTSID="{5DB1DDAE-B581-45DA-A037-86DE2A32B86A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="Id_Empresa">
+      DTS:ObjectName="Lista_Ids_Empresa">
       <DTS:VariableValue
         DTS:DataSubType="ManagedSerializable"
         DTS:DataType="13">
@@ -283,6 +294,42 @@
           </SOAP-ENV:Body>
         </SOAP-ENV:Envelope>
       </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10EE7E11-B2BD-446B-B158-FB5C1AE04E1F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="URL_Datos">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Proyectos\SSIS\Source_Data.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5AB0BF44-0047-491D-824F-4A29886D4FAB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="URL_Detalles_Temp">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Proyectos\Detail_Data.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7D6B098D-0974-44B2-B229-C493B3AC1566}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="URL_Encabezados_Temp">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Proyectos\Head_Data.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B3C4DBC4-E475-4AB2-90A4-B1284CB58043}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="URL_Resultados">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Proyectos\Resultado.txt</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -698,7 +745,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el conjunto de registros."
-                  name="VariableName">User::Id_Empresa</property>
+                  name="VariableName">User::Lista_Ids_Empresa</property>
               </properties>
               <inputs>
                 <input
@@ -1136,7 +1183,7 @@
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
-            VarName="User::Id_Empresa" />
+            VarName="User::Lista_Ids_Empresa" />
         </DTS:ObjectData>
       </DTS:ForEachEnumerator>
       <DTS:Variables />
@@ -1266,13 +1313,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
-                          name="Expression">#{Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
+                          name="Expression">#{Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Id_Empresa]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
                           expressionType="Notify"
-                          name="FriendlyExpression">IdEmpresa == @[User::Empresa_Actual]</property>
+                          name="FriendlyExpression">IdEmpresa == @[User::Id_Empresa]</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
@@ -1601,13 +1648,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
-                          name="Expression">#{Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
+                          name="Expression">#{Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Id_Empresa]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
                           expressionType="Notify"
-                          name="FriendlyExpression">IdEmpresa == @[User::Empresa_Actual]</property>
+                          name="FriendlyExpression">IdEmpresa == @[User::Id_Empresa]</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
@@ -1800,10 +1847,10 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{652A8BEB-3783-440B-A387-A1D53B72FB9A}"
-          DTS:ObjectName="{652A8BEB-3783-440B-A387-A1D53B72FB9A}"
+          DTS:DTSID="{CD9B5741-6004-4567-AC7B-C8A17D40073C}"
+          DTS:ObjectName="{CD9B5741-6004-4567-AC7B-C8A17D40073C}"
           DTS:ValueIndex="0"
-          DTS:VariableName="User::Empresa_Actual" />
+          DTS:VariableName="User::Id_Empresa" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
