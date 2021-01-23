@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Head_Detail", "Head_Detail.dtproj", "{DBF0FC05-B614-4B5E-806D-9C36D543E45B}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Library", "SSIS_Library.dtproj", "{DBF0FC05-B614-4B5E-806D-9C36D543E45B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

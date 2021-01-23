@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-4P0UA6H"
   DTS:CreatorName="DESKTOP-4P0UA6H\JonhyBoys"
-  DTS:DTSID="{04C6633D-04FD-41CA-BB40-3E67207524DB}"
+  DTS:DTSID="{0E7423AB-31B4-4028-8FA3-59FE0107B193}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="3082"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Head_Detail"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{D468473F-D8EA-493E-BCE3-4CD89D8AD0CA}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{B50BEC7B-DDF3-47F6-897E-813CDD633E03}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -287,13 +287,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Partir Datos de Origen"
+      DTS:refId="Package\Dividir datos en Encabezado y Detalle"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
       DTS:DTSID="{39BA362F-9FB2-4757-B0B4-C2AF7AF434DC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Partir Datos de Origen"
+      DTS:ObjectName="Dividir datos en Encabezado y Detalle"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -301,240 +301,56 @@
           version="1">
           <components>
             <component
-              refId="Package\Partir Datos de Origen\Destino de conjunto de registros"
-              componentClassID="Microsoft.RecordsetDestination"
-              contactInfo="Destino de conjunto de registros;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-              description="Crea y rellena un conjunto de registros ADO en memoria que está disponible fuera del flujo de datos. Los scripts y otros elementos de paquete pueden usar el conjunto de registros. Por ejemplo, se usa un conjunto de registros para almacenar el nombre de los archivos que se van a cargar en el almacenamiento de datos."
-              name="Destino de conjunto de registros">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Especifica la variable que contiene el conjunto de registros."
-                  name="VariableName">User::Id_Empresa</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Partir Datos de Origen\Destino de conjunto de registros.Inputs[Entrada de destino de conjunto de registros]"
-                  hasSideEffects="true"
-                  name="Entrada de destino de conjunto de registros">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Partir Datos de Origen\Destino de conjunto de registros.Inputs[Entrada de destino de conjunto de registros].Columns[IdEmpresa]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="IdEmpresa"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpresa]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Partir Datos de Origen\Detail"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-              description="Destino de archivo plano"
-              localeId="3082"
-              name="Detail"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Partir Datos de Origen\Detail.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
-                  connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano]"
-                  hasSideEffects="true"
-                  name="Entrada de destino de archivo plano">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="IdEmpresa"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
-                    <inputColumn
-                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].Columns[IdEmpleado]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="IdEmpleado"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]" />
-                    <inputColumn
-                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpleado]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="NombreEmpleado"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
-                      dataType="wstr"
-                      length="50"
-                      name="IdEmpresa" />
-                    <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
-                      dataType="wstr"
-                      length="50"
-                      name="IdEmpleado" />
-                    <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
-                      dataType="wstr"
-                      length="50"
-                      name="NombreEmpleado" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Partir Datos de Origen\Head"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-              description="Destino de archivo plano"
-              localeId="3082"
-              name="Head"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Partir Datos de Origen\Head.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Head_TXT]"
-                  connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano]"
-                  hasSideEffects="true"
-                  name="Entrada de destino de archivo plano">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="IdEmpresa"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
-                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpresa]" />
-                    <inputColumn
-                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpresa]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="NombreEmpresa"
-                      cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
-                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpresa]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
-                      dataType="wstr"
-                      length="50"
-                      name="IdEmpresa" />
-                    <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
-                      dataType="wstr"
-                      length="50"
-                      name="NombreEmpresa" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
-              refId="Package\Partir Datos de Origen\Multidifusión"
+              refId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles"
               componentClassID="Microsoft.Multicast"
               contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
               description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
-              name="Multidifusión">
+              name="Dividir columnas en filas de encabezado y detalles">
               <inputs>
                 <input
-                  refId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Inputs[Entrada de Multidifusión 1]"
                   name="Entrada de Multidifusión 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 2]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 2]"
                   deleteOutputOnPathDetached="true"
                   name="Salida de multidifusión 2"
-                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  synchronousInputId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Inputs[Entrada de Multidifusión 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 1]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 1]"
                   deleteOutputOnPathDetached="true"
                   name="Salida de multidifusión 1"
-                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  synchronousInputId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Inputs[Entrada de Multidifusión 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 4]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 4]"
                   deleteOutputOnPathDetached="true"
                   name="Salida de multidifusión 4"
-                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  synchronousInputId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Inputs[Entrada de Multidifusión 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 3]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 3]"
                   dangling="true"
                   deleteOutputOnPathDetached="true"
                   name="Salida de multidifusión 3"
-                  synchronousInputId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  synchronousInputId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Inputs[Entrada de Multidifusión 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Partir Datos de Origen\Ordenar"
+              refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas"
               componentClassID="Microsoft.Sort"
               contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
-              name="Ordenar"
+              name="Eliminar claves de encabezado duplicadas"
               version="1">
               <properties>
                 <property
@@ -549,16 +365,16 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Inputs[Entrada de ordenación]"
                   name="Entrada de ordenación">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[IdEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Inputs[Entrada de ordenación].Columns[IdEmpresa]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="IdEmpresa"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -571,12 +387,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[NombreEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Inputs[Entrada de ordenación].Columns[NombreEmpresa]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="NombreEmpresa"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -589,12 +405,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[IdEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Inputs[Entrada de ordenación].Columns[IdEmpleado]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="IdEmpleado"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -607,12 +423,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación].Columns[NombreEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Inputs[Entrada de ordenación].Columns[NombreEmpleado]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="NombreEmpleado"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -630,16 +446,16 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación]"
                   isSorted="true"
                   name="Salida de ordenación">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[IdEmpresa]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[IdEmpresa]"
                       name="IdEmpresa"
                       sortKeyPosition="1">
                       <properties>
@@ -647,52 +463,52 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
                       name="NombreEmpresa">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[IdEmpleado]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[IdEmpleado]"
                       name="IdEmpleado">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
                       name="NombreEmpleado">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -701,11 +517,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Partir Datos de Origen\Ordenar 1"
+              refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado"
               componentClassID="Microsoft.Sort"
               contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
-              name="Ordenar 1"
+              name="Eliminar filas duplicadas de encabezado"
               version="1">
               <properties>
                 <property
@@ -720,16 +536,16 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Inputs[Entrada de ordenación]"
                   name="Entrada de ordenación">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[IdEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Inputs[Entrada de ordenación].Columns[IdEmpresa]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="IdEmpresa"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -742,12 +558,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[NombreEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Inputs[Entrada de ordenación].Columns[NombreEmpresa]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="NombreEmpresa"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -760,12 +576,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[IdEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Inputs[Entrada de ordenación].Columns[IdEmpleado]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="IdEmpleado"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -778,12 +594,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación].Columns[NombreEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Inputs[Entrada de ordenación].Columns[NombreEmpleado]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="NombreEmpleado"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]">
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -801,16 +617,16 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación]"
                   isSorted="true"
                   name="Salida de ordenación">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[IdEmpresa]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[IdEmpresa]"
                       name="IdEmpresa"
                       sortKeyPosition="1">
                       <properties>
@@ -818,15 +634,15 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[NombreEmpresa]"
                       name="NombreEmpresa"
                       sortKeyPosition="2">
                       <properties>
@@ -834,37 +650,37 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[IdEmpleado]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[IdEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[IdEmpleado]"
                       name="IdEmpleado">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[NombreEmpleado]"
                       name="NombreEmpleado">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]}</property>
+                          name="SortColumnId">#{Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -873,12 +689,196 @@
               </outputs>
             </component>
             <component
-              refId="Package\Partir Datos de Origen\Origen de archivo plano"
+              refId="Package\Dividir datos en Encabezado y Detalle\Guardar claves de encabezado en variable para el ciclo"
+              componentClassID="Microsoft.RecordsetDestination"
+              contactInfo="Destino de conjunto de registros;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea y rellena un conjunto de registros ADO en memoria que está disponible fuera del flujo de datos. Los scripts y otros elementos de paquete pueden usar el conjunto de registros. Por ejemplo, se usa un conjunto de registros para almacenar el nombre de los archivos que se van a cargar en el almacenamiento de datos."
+              name="Guardar claves de encabezado en variable para el ciclo">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el conjunto de registros."
+                  name="VariableName">User::Id_Empresa</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dividir datos en Encabezado y Detalle\Guardar claves de encabezado en variable para el ciclo.Inputs[Entrada de destino de conjunto de registros]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de conjunto de registros">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar claves de encabezado en variable para el ciclo.Inputs[Entrada de destino de conjunto de registros].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación].Columns[IdEmpresa]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Guardar filas de detalles enarchivo de texto temporal"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
+                  connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                    <inputColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].Columns[IdEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpleado"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]" />
+                    <inputColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpleado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpleado"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      dataType="wstr"
+                      length="50"
+                      name="IdEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                      dataType="wstr"
+                      length="50"
+                      name="IdEmpleado" />
+                    <externalMetadataColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                      dataType="wstr"
+                      length="50"
+                      name="NombreEmpleado" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Guardar filas de encabezado en archivo de texto temporal"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Head_TXT]"
+                  connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IdEmpresa"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[IdEmpresa]" />
+                    <inputColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpresa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreEmpresa"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación].Columns[NombreEmpresa]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                      dataType="wstr"
+                      length="50"
+                      name="IdEmpresa" />
+                    <externalMetadataColumn
+                      refId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                      dataType="wstr"
+                      length="50"
+                      name="NombreEmpresa" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen de archivo plano"
               localeId="3082"
-              name="Origen de archivo plano"
+              name="Leer datos iniciales"
               usesDispositions="true"
               version="1">
               <properties>
@@ -893,25 +893,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Partir Datos de Origen\Origen de archivo plano.Connections[FlatFileConnection]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Datos_TXT]"
                   connectionManagerRefId="Package.ConnectionManagers[Datos_TXT]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano]"
                   name="Salida de origen de archivo plano">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
                       name="IdEmpresa"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -926,14 +926,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
                       name="NombreEmpresa"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -948,14 +948,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
                       name="IdEmpleado"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -970,14 +970,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                      externalMetadataColumnId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
                       length="50"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
                       name="NombreEmpleado"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -995,25 +995,25 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="IdEmpresa" />
                     <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="NombreEmpresa" />
                     <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="IdEmpleado" />
                     <externalMetadataColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -1021,27 +1021,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano]"
                   isErrorOut="true"
                   name="Salida de error de origen de archivo plano">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
                       codePage="1252"
                       dataType="text"
                       description="Columna de salida de error de origen de archivo plano"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
                       name="Columna de salida de error de origen de archivo plano" />
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      refId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      lineageId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1052,47 +1052,47 @@
           </components>
           <paths>
             <path
-              refId="Package\Partir Datos de Origen.Paths[Memoria]"
-              endId="Package\Partir Datos de Origen\Destino de conjunto de registros.Inputs[Entrada de destino de conjunto de registros]"
+              refId="Package\Dividir datos en Encabezado y Detalle.Paths[Memoria]"
+              endId="Package\Dividir datos en Encabezado y Detalle\Guardar claves de encabezado en variable para el ciclo.Inputs[Entrada de destino de conjunto de registros]"
               name="Memoria"
-              startId="Package\Partir Datos de Origen\Ordenar.Outputs[Salida de ordenación]" />
+              startId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\Partir Datos de Origen.Paths[Salida de multidifusión 2]"
-              endId="Package\Partir Datos de Origen\Detail.Inputs[Entrada de destino de archivo plano]"
+              refId="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de multidifusión 2]"
+              endId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal.Inputs[Entrada de destino de archivo plano]"
               name="Salida de multidifusión 2"
-              startId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 2]" />
+              startId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 2]" />
             <path
-              refId="Package\Partir Datos de Origen.Paths[Salida de multidifusión 4]"
-              endId="Package\Partir Datos de Origen\Ordenar 1.Inputs[Entrada de ordenación]"
+              refId="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de multidifusión 4]"
+              endId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Inputs[Entrada de ordenación]"
               name="Salida de multidifusión 4"
-              startId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 4]" />
+              startId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 4]" />
             <path
-              refId="Package\Partir Datos de Origen.Paths[Salida de ordenación]"
-              endId="Package\Partir Datos de Origen\Head.Inputs[Entrada de destino de archivo plano]"
+              refId="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de ordenación]"
+              endId="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal.Inputs[Entrada de destino de archivo plano]"
               name="Salida de ordenación"
-              startId="Package\Partir Datos de Origen\Ordenar 1.Outputs[Salida de ordenación]" />
+              startId="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\Partir Datos de Origen.Paths[Salida de origen de archivo plano]"
-              endId="Package\Partir Datos de Origen\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+              refId="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de origen de archivo plano]"
+              endId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Inputs[Entrada de Multidifusión 1]"
               name="Salida de origen de archivo plano"
-              startId="Package\Partir Datos de Origen\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+              startId="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales.Outputs[Salida de origen de archivo plano]" />
             <path
-              refId="Package\Partir Datos de Origen.Paths[Variable]"
-              endId="Package\Partir Datos de Origen\Ordenar.Inputs[Entrada de ordenación]"
+              refId="Package\Dividir datos en Encabezado y Detalle.Paths[Variable]"
+              endId="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas.Inputs[Entrada de ordenación]"
               name="Variable"
-              startId="Package\Partir Datos de Origen\Multidifusión.Outputs[Salida de multidifusión 1]" />
+              startId="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles.Outputs[Salida de multidifusión 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Recorrer los encabezados"
+      DTS:refId="Package\Recorrer claves de encabezado y crear archivo Resultado"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contenedor de bucles Foreach"
       DTS:DTSID="{3D3403A6-98FE-42F3-9790-47495107888B}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Recorrer los encabezados">
+      DTS:ObjectName="Recorrer claves de encabezado y crear archivo Resultado">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
         DTS:DTSID="{5C460C46-61D1-4EC0-A5D4-25D381BCE166}"
@@ -1106,13 +1106,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Recorrer los encabezados\Pegar Detalle"
+          DTS:refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
           DTS:DTSID="{369765D4-67E4-43A6-B0BC-8273DD63189D}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Pegar Detalle"
+          DTS:ObjectName="Pegar Detalles al Resultado"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -1120,12 +1120,12 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado"
                   componentClassID="Microsoft.FlatFileDestination"
                   contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
                   description="Destino de archivo plano"
                   localeId="3082"
-                  name="Destino de archivo plano"
+                  name="Agregar filas filtradas al archivo de texto Resultado"
                   version="1">
                   <properties>
                     <property
@@ -1144,46 +1144,46 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Connections[FlatFileConnection]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Resutado_TXT]"
                       connectionManagerRefId="Package.ConnectionManagers[Resutado_TXT]"
                       name="FlatFileConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano]"
                       hasSideEffects="true"
                       name="Entrada de destino de archivo plano">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[IdEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].Columns[IdEmpleado]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="IdEmpleado"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]" />
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]" />
                         <inputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpleado]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="NombreEmpleado"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]" />
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpleado]"
                           dataType="wstr"
                           length="50"
                           name="IdEmpleado" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpleado]"
                           dataType="wstr"
                           length="50"
                           name="NombreEmpleado" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Delimiter]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[Delimiter]"
                           codePage="1252"
                           dataType="str"
                           length="255"
@@ -1193,12 +1193,102 @@
                   </inputs>
                 </component>
                 <component
-                  refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+                  name="Filtrar filas con clave igual a la de la variable de iteración del ciclo"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]"
+                      description="Entrada en la transformación División condicional"
+                      name="Entrada de división condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional].Columns[IdEmpresa]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="IdEmpresa"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Detalle]"
+                      description="Salida 1 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Detalle"
+                      synchronousInputId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">#{Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">IdEmpresa == @[User::Empresa_Actual]</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Salida predeterminada de división condicional]"
+                      description="Salida predeterminada de la transformación División condicional"
+                      exclusionGroup="1"
+                      name="Salida predeterminada de división condicional"
+                      synchronousInputId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional]"
+                      description="Salida de error de la transformación División condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de división condicional"
+                      synchronousInputId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
                   description="Origen de archivo plano"
                   localeId="3082"
-                  name="Detalle"
+                  name="Leer filas de detalle del archivo temporal"
                   usesDispositions="true"
                   version="1">
                   <properties>
@@ -1213,24 +1303,24 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Connections[FlatFileConnection]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Detail_TXT]"
                       connectionManagerRefId="Package.ConnectionManagers[Detail_TXT]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano]"
                       name="Salida de origen de archivo plano">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
                           length="50"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
                           name="IdEmpresa"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1245,13 +1335,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
                           length="50"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpleado]"
                           name="IdEmpleado"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1266,13 +1356,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
                           length="50"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[NombreEmpleado]"
                           name="NombreEmpleado"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1290,134 +1380,44 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
                           dataType="wstr"
                           length="50"
                           name="IdEmpresa" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpleado]"
                           dataType="wstr"
                           length="50"
                           name="IdEmpleado" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpleado]"
                           dataType="wstr"
                           length="50"
                           name="NombreEmpleado" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano]"
                       isErrorOut="true"
                       name="Salida de error de origen de archivo plano">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
                           codePage="1252"
                           dataType="text"
                           description="Columna de salida de error de origen de archivo plano"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
                           name="Columna de salida de error de origen de archivo plano" />
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional"
-                  componentClassID="Microsoft.ConditionalSplit"
-                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
-                  name="División condicional"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]"
-                      description="Entrada en la transformación División condicional"
-                      name="Entrada de división condicional">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional].Columns[IdEmpresa]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="IdEmpresa"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Detalle]"
-                      description="Salida 1 de la transformación División condicional"
-                      errorOrTruncationOperation="Cálculo"
-                      errorRowDisposition="FailComponent"
-                      exclusionGroup="1"
-                      name="Detalle"
-                      synchronousInputId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
-                          name="Expression">#{Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
-                          expressionType="Notify"
-                          name="FriendlyExpression">IdEmpresa == @[User::Empresa_Actual]</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
-                          name="EvaluationOrder">0</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida predeterminada de división condicional]"
-                      description="Salida predeterminada de la transformación División condicional"
-                      exclusionGroup="1"
-                      name="Salida predeterminada de división condicional"
-                      synchronousInputId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          name="IsDefaultOut">true</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional]"
-                      description="Salida de error de la transformación División condicional"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Salida de error de división condicional"
-                      synchronousInputId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1428,27 +1428,27 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Recorrer los encabezados\Pegar Detalle.Paths[Detalle]"
-                  endId="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado.Paths[Detalle]"
+                  endId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano]"
                   name="Detalle"
-                  startId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Outputs[Detalle]" />
+                  startId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Outputs[Detalle]" />
                 <path
-                  refId="Package\Recorrer los encabezados\Pegar Detalle.Paths[Salida de origen de archivo plano]"
-                  endId="Package\Recorrer los encabezados\Pegar Detalle\División condicional.Inputs[Entrada de división condicional]"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]"
                   name="Salida de origen de archivo plano"
-                  startId="Package\Recorrer los encabezados\Pegar Detalle\Detalle.Outputs[Salida de origen de archivo plano]" />
+                  startId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal.Outputs[Salida de origen de archivo plano]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Recorrer los encabezados\Pegar Encabezado"
+          DTS:refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
           DTS:DTSID="{E7440FF4-4309-441D-B0BE-7BECDCA86760}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Pegar Encabezado"
+          DTS:ObjectName="Pegar Encabezado al Resultado"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -1456,12 +1456,12 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado"
                   componentClassID="Microsoft.FlatFileDestination"
                   contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
                   description="Destino de archivo plano"
                   localeId="3082"
-                  name="Destino de archivo plano"
+                  name="Agregar fila filtrada al archivo de texto Resultado"
                   version="1">
                   <properties>
                     <property
@@ -1480,46 +1480,46 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Connections[FlatFileConnection]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Resutado_Encabezado]"
                       connectionManagerRefId="Package.ConnectionManagers[Resutado_Encabezado]"
                       name="FlatFileConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano]"
                       hasSideEffects="true"
                       name="Entrada de destino de archivo plano">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].Columns[IdEmpresa]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="IdEmpresa"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
                         <inputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].Columns[NombreEmpresa]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="NombreEmpresa"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]" />
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[IdEmpresa]"
                           dataType="wstr"
                           length="50"
                           name="IdEmpresa" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreEmpresa]"
                           dataType="wstr"
                           length="50"
                           name="NombreEmpresa" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Columna de delimitador de filas]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano].ExternalColumns[Columna de delimitador de filas]"
                           dataType="wstr"
                           length="255"
                           name="Columna de delimitador de filas" />
@@ -1528,44 +1528,44 @@
                   </inputs>
                 </component>
                 <component
-                  refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo"
                   componentClassID="Microsoft.ConditionalSplit"
                   contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
                   description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
-                  name="División condicional"
+                  name="Filtrar fila con clave igual a la de la variable de iteración del ciclo"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]"
                       description="Entrada en la transformación División condicional"
                       name="Entrada de división condicional">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional].Columns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional].Columns[IdEmpresa]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="IdEmpresa"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Encabezado]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Encabezado]"
                       description="Salida 1 de la transformación División condicional"
                       errorOrTruncationOperation="Cálculo"
                       errorRowDisposition="FailComponent"
                       exclusionGroup="1"
                       name="Encabezado"
-                      synchronousInputId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]"
+                      synchronousInputId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
-                          name="Expression">#{Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
+                          name="Expression">#{Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]} == @[User::Empresa_Actual]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -1580,11 +1580,11 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida predeterminada de división condicional]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Salida predeterminada de división condicional]"
                       description="Salida predeterminada de la transformación División condicional"
                       exclusionGroup="1"
                       name="Salida predeterminada de división condicional"
-                      synchronousInputId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]">
+                      synchronousInputId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -1593,23 +1593,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional]"
                       description="Salida de error de la transformación División condicional"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Salida de error de división condicional"
-                      synchronousInputId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]">
+                      synchronousInputId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1618,12 +1618,12 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
                   description="Origen de archivo plano"
                   localeId="3082"
-                  name="Origen de archivo plano"
+                  name="Leer filas de encabezado del archivo temporal"
                   usesDispositions="true"
                   version="1">
                   <properties>
@@ -1638,24 +1638,24 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Connections[FlatFileConnection]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Head_TXT]"
                       connectionManagerRefId="Package.ConnectionManagers[Head_TXT]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano]"
                       name="Salida de origen de archivo plano">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
                           length="50"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[IdEmpresa]"
                           name="IdEmpresa"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1670,13 +1670,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                          externalMetadataColumnId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
                           length="50"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].Columns[NombreEmpresa]"
                           name="NombreEmpresa"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1694,39 +1694,39 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[IdEmpresa]"
                           dataType="wstr"
                           length="50"
                           name="IdEmpresa" />
                         <externalMetadataColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano].ExternalColumns[NombreEmpresa]"
                           dataType="wstr"
                           length="50"
                           name="NombreEmpresa" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                      refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano]"
                       isErrorOut="true"
                       name="Salida de error de origen de archivo plano">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
                           codePage="1252"
                           dataType="text"
                           description="Columna de salida de error de origen de archivo plano"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
                           name="Columna de salida de error de origen de archivo plano" />
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                          lineageId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1737,15 +1737,15 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Encabezado]"
-                  endId="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado.Paths[Encabezado]"
+                  endId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado.Inputs[Entrada de destino de archivo plano]"
                   name="Encabezado"
-                  startId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Outputs[Encabezado]" />
+                  startId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Outputs[Encabezado]" />
                 <path
-                  refId="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Salida de origen de archivo plano]"
-                  endId="Package\Recorrer los encabezados\Pegar Encabezado\División condicional.Inputs[Entrada de división condicional]"
+                  refId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado.Paths[Salida de origen de archivo plano]"
+                  endId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo.Inputs[Entrada de división condicional]"
                   name="Salida de origen de archivo plano"
-                  startId="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+                  startId="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal.Outputs[Salida de origen de archivo plano]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1753,13 +1753,13 @@
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Recorrer los encabezados.PrecedenceConstraints[Restricción]"
+          DTS:refId="Package\Recorrer claves de encabezado y crear archivo Resultado.PrecedenceConstraints[Restricción]"
           DTS:CreationName=""
           DTS:DTSID="{F6686172-431C-450F-9BC9-EB365871E5D4}"
-          DTS:From="Package\Recorrer los encabezados\Pegar Encabezado"
+          DTS:From="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción"
-          DTS:To="Package\Recorrer los encabezados\Pegar Detalle" />
+          DTS:To="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -1776,10 +1776,10 @@
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
       DTS:DTSID="{53C9F5B0-0DC4-4D8C-B09A-380D8C1E1C7D}"
-      DTS:From="Package\Partir Datos de Origen"
+      DTS:From="Package\Dividir datos en Encabezado y Detalle"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Recorrer los encabezados" />
+      DTS:To="Package\Recorrer claves de encabezado y crear archivo Resultado" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1794,31 +1794,31 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Partir Datos de Origen"
-          TopLeft="674.166639877691,72.8000005785624" />
+          Size="253.6,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle"
+          TopLeft="104.999995827675,44.20000035127" />
         <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Detalle"
-          TopLeft="71.2333038952625,115.466669834985" />
+          Size="207.2,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado"
+          TopLeft="74.5666370961411,99.000003037453" />
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Encabezado"
-          TopLeft="57.0666377915287,21.0000024175646" />
+          Size="227.2,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado"
+          TopLeft="66.2333040939446,17.5333357233473" />
         <EdgeLayout
-          Id="Package\Recorrer los encabezados.PrecedenceConstraints[Restricción]"
-          TopLeft="141.149970843396,62.6000024175646">
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado.PrecedenceConstraints[Restricción]"
+          TopLeft="178.999970595043,59.1333357233473">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.8666674174204"
+              EndConnector="0,39.8666673141057"
               Start="0,0"
-              End="0,45.3666674174204">
+              End="0,32.3666673141057">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.3666674174204" />
+                    End="0,32.3666673141057" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1830,24 +1830,24 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="309.6,236"
-          Size="309.6,279.2"
-          Id="Package\Recorrer los encabezados"
-          TopLeft="606.666642559901,221.00000175635" />
+          PanelSize="369.6,174.4"
+          Size="369.6,217.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado"
+          TopLeft="51.6666646136191,130.866667706701" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="763.216641218796,114.400000578562">
+          TopLeft="234.133330220647,85.80000035127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,106.600001177788"
+              EndConnector="0,45.0666673554313"
               Start="0,0"
-              End="0,99.1000011777879">
+              End="0,37.5666673554313">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,99.1000011777879" />
+                    End="0,37.5666673554313" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1860,84 +1860,88 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Partir Datos de Origen">
+    design-time-name="Package\Dividir datos en Encabezado y Detalle">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="136.8,41.6"
-          Id="Package\Partir Datos de Origen\Multidifusión"
-          TopLeft="488.333313928711,119.600000950495" />
+          Size="167.2,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Leer datos iniciales"
+          TopLeft="469.166648023659,19.0666668181949" />
         <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\Partir Datos de Origen\Ordenar 1"
-          TopLeft="494.999980330468,259.13333539274" />
+          Size="311.2,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Dividir columnas en filas de encabezado y detalles"
+          TopLeft="397.499980595378,109.600000950495" />
         <NodeLayout
-          Size="104.8,41.6"
-          Id="Package\Partir Datos de Origen\Detail"
-          TopLeft="686.666639380986,208.000001653036" />
+          Size="264,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Eliminar filas duplicadas de encabezado"
+          TopLeft="413.333313663801,206.63333539274" />
         <NodeLayout
-          Size="227.2,41.6"
-          Id="Package\Partir Datos de Origen\Destino de conjunto de registros"
-          TopLeft="126.666661633386,410.800003264745" />
+          Size="321.6,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Guardar filas de detalles enarchivo de texto temporal"
+          TopLeft="708.333306047653,208.833334986369" />
         <NodeLayout
-          Size="103.2,41.6"
-          Id="Package\Partir Datos de Origen\Head"
-          TopLeft="511.666646334861,398.666669834985" />
+          Size="334.4,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Guardar claves de encabezado en variable para el ciclo"
+          TopLeft="82.4999949667193,340.800003264745" />
         <NodeLayout
-          Size="116.8,41.6"
-          Id="Package\Partir Datos de Origen\Ordenar"
-          TopLeft="235.833323962159,235.733335206774" />
+          Size="345.6,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Guardar filas de encabezado en archivo de texto temporal"
+          TopLeft="370.833313001528,286.166669834985" />
+        <NodeLayout
+          Size="275.2,41.6"
+          Id="Package\Dividir datos en Encabezado y Detalle\Eliminar claves de encabezado duplicadas"
+          TopLeft="115.833323962159,206.566668540107" />
         <EdgeLayout
-          Id="Package\Partir Datos de Origen.Paths[Variable]"
-          TopLeft="524.533313928711,161.200000950495">
+          Id="Package\Dividir datos en Encabezado y Detalle.Paths[Variable]"
+          TopLeft="477.299980595378,151.200000950495">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-230.299989966552,74.5333342562782"
+              EndConnector="-223.866656633219,55.3666675896122"
               Start="0,0"
-              End="-230.299989966552,67.0333342562782">
+              End="-223.866656633219,47.8666675896122">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.7945191211976" />
+                    End="0,14.7691591913809" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.7945191211976"
-                    Point2="0,25.7945191211976"
-                    Point3="-4,25.7945191211976" />
+                    Point1="0,14.7691591913809"
+                    Point2="0,18.7691591913809"
+                    Point3="-4,18.7691591913809" />
                   <mssgle:LineSegment
-                    End="-226.299989966552,25.7945191211976" />
+                    End="-219.866656633219,18.7691591913809" />
                   <mssgle:CubicBezierSegment
-                    Point1="-226.299989966552,25.7945191211976"
-                    Point2="-230.299989966552,25.7945191211976"
-                    Point3="-230.299989966552,29.7945191211976" />
+                    Point1="-219.866656633219,18.7691591913809"
+                    Point2="-223.866656633219,18.7691591913809"
+                    Point3="-223.866656633219,22.7691591913809" />
                   <mssgle:LineSegment
-                    End="-230.299989966552,67.0333342562782" />
+                    End="-223.866656633219,47.8666675896122" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.759526233276,30.7945191211976,37.2190625,9.7490234375"
+              BoundingBox="-130.542859566609,23.7691591913809,37.2190625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Partir Datos de Origen.Paths[Salida de ordenación]"
-          TopLeft="560.333313332665,300.73333539274">
+          Id="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de origen de archivo plano]"
+          TopLeft="552.933314309518,60.6666668181949">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,97.9333344422446"
+              EndConnector="0,48.9333341323001"
               Start="0,0"
-              End="0,90.4333344422446">
+              End="0,41.4333341323001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.4333344422446" />
+                    End="0,41.4333341323001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1947,19 +1951,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Partir Datos de Origen.Paths[Salida de multidifusión 4]"
-          TopLeft="557.06664712959,161.200000950495">
+          Id="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de ordenación]"
+          TopLeft="544.483313332664,248.23333539274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,97.9333344422447"
+              EndConnector="0,37.933334442245"
               Start="0,0"
-              End="0,90.4333344422447">
+              End="0,30.433334442245">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,90.4333344422447" />
+                    End="0,30.433334442245" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1969,31 +1973,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Partir Datos de Origen.Paths[Salida de multidifusión 2]"
-          TopLeft="588.933313928711,161.200000950495">
+          Id="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de multidifusión 4]"
+          TopLeft="549.21664712959,151.200000950495">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="150.133325452275,46.8000007025402"
+              EndConnector="0,55.433334442245"
               Start="0,0"
-              End="150.133325452275,39.3000007025402">
+              End="0,47.933334442245">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.1965585605349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.1965585605349"
-                    Point2="0,16.1965585605349"
-                    Point3="4,16.1965585605349" />
-                  <mssgle:LineSegment
-                    End="146.133325452275,16.1965585605349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="146.133325452275,16.1965585605349"
-                    Point2="150.133325452275,16.1965585605349"
-                    Point3="150.133325452275,20.1965585605349" />
-                  <mssgle:LineSegment
-                    End="150.133325452275,39.3000007025402" />
+                    End="0,47.933334442245" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2003,31 +1995,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Partir Datos de Origen.Paths[Memoria]"
-          TopLeft="294.233323962159,277.333335206774">
+          Id="Package\Dividir datos en Encabezado y Detalle.Paths[Salida de multidifusión 2]"
+          TopLeft="628.899980595378,151.200000950495">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-53.9666623287734,133.466668057972"
+              EndConnector="240.233325452275,57.6333340358743"
               Start="0,0"
-              End="-53.9666623287734,125.966668057972">
+              End="240.233325452275,50.1333340358743">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.7333340289858" />
+                    End="0,15.5375533392641" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,62.7333340289858"
-                    Point2="0,66.7333340289858"
-                    Point3="-4,66.7333340289858" />
+                    Point1="0,15.5375533392641"
+                    Point2="0,19.5375533392641"
+                    Point3="4,19.5375533392641" />
                   <mssgle:LineSegment
-                    End="-49.9666623287734,66.7333340289858" />
+                    End="236.233325452275,19.5375533392641" />
                   <mssgle:CubicBezierSegment
-                    Point1="-49.9666623287734,66.7333340289858"
-                    Point2="-53.9666623287734,66.7333340289858"
-                    Point3="-53.9666623287734,70.7333340289858" />
+                    Point1="236.233325452275,19.5375533392641"
+                    Point2="240.233325452275,19.5375533392641"
+                    Point3="240.233325452275,23.5375533392641" />
                   <mssgle:LineSegment
-                    End="-53.9666623287734,125.966668057972" />
+                    End="240.233325452275,50.1333340358743" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2036,24 +2028,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Partir Datos de Origen\Origen de archivo plano"
-          TopLeft="469.166648023659,19.0666668181949" />
         <EdgeLayout
-          Id="Package\Partir Datos de Origen.Paths[Salida de origen de archivo plano]"
-          TopLeft="560.149980976185,60.6666668181949">
+          Id="Package\Dividir datos en Encabezado y Detalle.Paths[Memoria]"
+          TopLeft="251.566659464439,248.166668540107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.9333341323001"
+              EndConnector="0,92.6333347246377"
               Start="0,0"
-              End="0,51.4333341323001">
+              End="0,85.1333347246377">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.4333341323001" />
+                    End="0,85.1333347246377" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2066,83 +2054,69 @@
     </LayoutInfo>
   </TaskHost>
   <PipelinePath
-    design-time-name="Package\Partir Datos de Origen.Paths[Variable]">
+    design-time-name="Package\Dividir datos en Encabezado y Detalle.Paths[Variable]">
     <PathAnnotation>PathName</PathAnnotation>
   </PipelinePath>
   <TaskHost
-    design-time-name="Package\Recorrer los encabezados\Pegar Detalle">
+    design-time-name="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="111.2,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Detalle\Detalle"
-          TopLeft="485,81" />
+          Size="264.8,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Leer filas de detalle del archivo temporal"
+          TopLeft="94.9999999999999,36" />
         <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Detalle\División condicional"
-          TopLeft="464,208" />
+          Size="379.2,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Filtrar filas con clave igual a la de la variable de iteración del ciclo"
+          TopLeft="37.5714285714286,123.714285714286" />
         <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Detalle\Destino de archivo plano"
-          TopLeft="455,345" />
+          Size="312.8,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado\Agregar filas filtradas al archivo de texto Resultado"
+          TopLeft="71.4285714285713,214.285714285714" />
         <EdgeLayout
-          Id="Package\Recorrer los encabezados\Pegar Detalle.Paths[Salida de origen de archivo plano]"
-          TopLeft="540.6,122.6">
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado.Paths[Salida de origen de archivo plano]"
+          TopLeft="227.285714285714,77.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.19999999999993,85.4000000000001"
+              EndConnector="0,46.1142857142857"
               Start="0,0"
-              End="8.19999999999993,77.9000000000001">
+              End="0,38.6142857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.7"
-                    Point2="0,42.7"
-                    Point3="4,42.7" />
-                  <mssgle:LineSegment
-                    End="4.19999999999993,42.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.19999999999993,42.7"
-                    Point2="8.19999999999993,42.7"
-                    Point3="8.19999999999993,46.7" />
-                  <mssgle:LineSegment
-                    End="8.19999999999993,77.9000000000001" />
+                    End="0,38.6142857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Recorrer los encabezados\Pegar Detalle.Paths[Detalle]"
-          TopLeft="550.1,249.6">
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Detalles al Resultado.Paths[Detalle]"
+          TopLeft="227.5,165.314285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,95.4"
+              EndConnector="0,48.9714285714284"
               Start="0,0"
-              End="0,87.9">
+              End="0,41.4714285714284">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.9" />
+                    End="0,41.4714285714284" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.73634765625,39.07548828125,31.4726953125,9.7490234375"
+              BoundingBox="-15.73634765625,15.8612025669642,31.4726953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2150,67 +2124,65 @@
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\Recorrer los encabezados\Pegar Encabezado">
+    design-time-name="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Encabezado\División condicional"
-          TopLeft="582,197" />
+          Size="373.6,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Filtrar fila con clave igual a la de la variable de iteración del ciclo"
+          TopLeft="30.3333552545962,99.9333325619168" />
         <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Encabezado\Origen de archivo plano"
-          TopLeft="570,75" />
+          Size="290.4,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Leer filas de encabezado del archivo temporal"
+          TopLeft="71.6666864686534,33.3999996693929" />
         <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Recorrer los encabezados\Pegar Encabezado\Destino de archivo plano"
-          TopLeft="573,351" />
+          Size="302.4,41.6"
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado\Agregar fila filtrada al archivo de texto Resultado"
+          TopLeft="64.6666868660176,191.533332066006" />
         <EdgeLayout
-          Id="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Salida de origen de archivo plano]"
-          TopLeft="665.6,116.6">
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado.Paths[Salida de origen de archivo plano]"
+          TopLeft="217.000020861625,74.9999996693929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80.4"
+              EndConnector="0,24.9333328925238"
               Start="0,0"
-              End="0,72.9">
+              End="0,17.4333328925238">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.9" />
+                    End="0,17.4333328925238" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Recorrer los encabezados\Pegar Encabezado.Paths[Encabezado]"
-          TopLeft="668.1,238.6">
+          Id="Package\Recorrer claves de encabezado y crear archivo Resultado\Pegar Encabezado al Resultado.Paths[Encabezado]"
+          TopLeft="216.500021060307,141.533332561917">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,112.4"
+              EndConnector="0,49.9999995040893"
               Start="0,0"
-              End="0,104.9">
+              End="0,42.4999995040893">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,104.9" />
+                    End="0,42.4999995040893" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-26.73703125,47.57548828125,53.4740625,9.7490234375"
+              BoundingBox="-26.73703125,16.3754880332947,53.4740625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
